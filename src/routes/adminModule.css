@@ -1,36 +1,47 @@
 :root {
-  --primary-color: #3498db; /* Blue accent */
-  --secondary-color: #2ecc71; /* Green accent */
-  --background-color: #121212; /* Dark background */
-  --card-background-color: #1e1e1e; /* Slightly lighter dark for cards */
+  --primary-gradient: linear-gradient(90deg, #3498db, #2980b9); /* Blue gradient */
+  --secondary-gradient: linear-gradient(90deg, #24392d, #243e2f); /* Green gradient */
+  --background-gradient: linear-gradient(180deg, #121212, #1e1e1e); /* Dark background gradient */
+  --card-gradient: linear-gradient(180deg, #1e1e1e, #2c2c2c); /* Slightly lighter gradient for cards */
   --text-color: #f0f0f0; /* Off-white text */
   --border-color: #444; /* Subtle dark border */
-  --danger-color: #e74c3c; /* Red for danger actions */
+  --danger-gradient: linear-gradient(90deg, #e74c3c, #c0392b); /* Red gradient for danger actions */
   --white-color: #ffffff; /* White color */
+}
+
+body {
+  background: var(--background-gradient);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .admin-module {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: var(--card-background-color);
+  background: var(--card-gradient);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
 .admin-module h1 {
-  color: var(--primary-color);
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 30px;
   font-size: 2.5rem;
-  border-bottom: 3px solid var(--primary-color);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 10px;
 }
 
 /* Sections Styling */
 .company-management,
 .communication-method-management {
-  background-color: var(--background-color);
+  background: var(--card-gradient);
   padding: 25px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -39,22 +50,51 @@
 
 .company-management h2,
 .communication-method-management h2 {
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  border-bottom: 2px solid var(--primary-color);
+  color: var(--text-color);
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 10px;
 }
 
-/* Form Styling */
-.admin-module form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  background-color: var(--card-background-color);
-  padding: 20px;
-  border-radius: 8px;
+/* Buttons with Gradients */
+.admin-module button {
+  background: var(--primary-gradient);
+  color: var(--white-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
+.admin-module button:hover {
+  background: linear-gradient(90deg, #2980b9, #1f618d);
+}
+
+.admin-module button:last-child {
+  background: var(--danger-gradient);
+}
+
+.admin-module button:last-child:hover {
+  background: linear-gradient(90deg, #c0392b, #8e2720);
+}
+
+.email-management button,
+.phone-management button {
+  background: var(--secondary-gradient);
+  width: 150px;
+  align-self: flex-start;
+}
+
+.email-management button:hover,
+.phone-management button:hover {
+  background: linear-gradient(90deg, #27ae60, #1e8449);
+}
+
+/* Form Inputs */
 .admin-module form input,
 .admin-module form textarea {
   width: 100%;
@@ -62,92 +102,25 @@
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 1rem;
-  background-color: var(--background-color);
+  background: var(--background-gradient);
   color: var(--text-color);
-  transition: border-color 0.3s ease;
 }
 
 .admin-module form input:focus,
 .admin-module form textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: #2980b9;
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
-
-.admin-module form textarea {
-  grid-column: 1 / -1;
-  min-height: 100px;
-  resize: vertical;
-}
-
-/* Email and Phone Management */
-.email-management,
-.phone-management {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.email-management h4,
-.phone-management h4 {
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-/* Button Styling */
-.admin-module button {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
-}
-
-.admin-module button:hover {
-  background-color: #2980b9;
-}
-
-.admin-module button:last-child {
-  background-color: var(--border-color);
-  color: var(--text-color);
-}
-
-.admin-module button:last-child:hover {
-  background-color: #555;
-}
-
-.email-management button,
-.phone-management button {
-  background-color: var(--secondary-color);
-  width: 150px;
-  align-self: flex-start;
-}
-
-.email-management button:hover,
-.phone-management button:hover {
-  background-color: #27ae60;
 }
 
 /* Lists Styling */
 .company-list,
 .communication-methods-list {
   margin-top: 20px;
-  background-color: var(--card-background-color);
+  background: var(--card-gradient);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.company-list h3,
-.communication-methods-list h3 {
-  color: var(--text-color);
-  margin-bottom: 15px;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 10px;
 }
 
 .company-item,
@@ -157,46 +130,6 @@
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid var(--border-color);
-}
-
-.company-actions,
-.method-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.company-actions button,
-.method-actions button {
-  padding: 5px 10px;
-  font-size: 0.9rem;
-}
-
-.company-actions button:first-child,
-.method-actions button:first-child {
-  background-color: var(--secondary-color);
-}
-
-.company-actions button:last-child,
-.method-actions button:last-child {
-  background-color: var(--danger-color);
-}
-
-.company-actions button:last-child:hover,
-.method-actions button:last-child:hover {
-  background-color: #c0392b;
-}
-
-/* Checkbox Styling */
-.admin-module label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.admin-module label input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;
 }
 
 /* Responsive Design */
@@ -211,43 +144,5 @@
 
   .admin-module form {
     grid-template-columns: 1fr;
-  }
-
-  .email-management,
-  .phone-management {
-    gap: 15px;
-  }
-
-  .company-list,
-  .communication-methods-list {
-    padding: 15px;
-  }
-
-  .company-item,
-  .method-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .company-actions,
-  .method-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 480px) {
-  .admin-module h1 {
-    font-size: 1.5rem;
-  }
-
-  .admin-module form {
-    padding: 10px;
-  }
-
-  .email-management button,
-  .phone-management button {
-    width: 100%;
   }
 }

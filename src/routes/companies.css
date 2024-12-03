@@ -1,13 +1,32 @@
+:root {
+  --primary-gradient: linear-gradient(90deg, #4caf50, #45a049); /* Green gradient */
+  --danger-gradient: linear-gradient(90deg, #f44336, #da190b); /* Red gradient */
+  --background-gradient: linear-gradient(180deg, #121212, #1e1e1e); /* Dark background gradient */
+  --card-gradient: linear-gradient(180deg, #1e1e1e, #292929); /* Dark card gradient */
+  --border-color: #444; /* Subtle border */
+  --text-color: #e0e0e0; /* Light text */
+  --accent-color: #4caf50; /* Accent color */
+  --subtle-text-color: #aaa; /* Subtle text */
+}
+
+body {
+  background: var(--background-gradient);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .company-list-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  color: var(--text-color);
 }
 
 .company-card {
-  background-color: #1e1e1e; /* Dark card background */
+  background: var(--card-gradient);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
@@ -18,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #333; /* Darker border */
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -40,15 +59,15 @@
 }
 
 .contact-section {
-  background-color: #292929; /* Dark section background */
+  background: linear-gradient(180deg, #292929, #1e1e1e); /* Dark gradient */
   border-radius: 6px;
   padding: 10px;
 }
 
 .contact-section h4 {
   margin-bottom: 10px;
-  color: #ffffff; /* Light section header text */
-  border-bottom: 1px solid #444; /* Subtle border */
+  color: #ffffff; /* Light section header */
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 5px;
 }
 
@@ -68,19 +87,19 @@
 .phone-icon {
   margin-right: 10px;
   font-size: 1.2em;
-  color: #4caf50; /* Accent color */
+  color: var(--accent-color); /* Accent color */
 }
 
 .communication-methods {
   margin-top: 20px;
-  background-color: #292929; /* Dark methods section */
+  background: linear-gradient(180deg, #292929, #1e1e1e); /* Dark gradient */
   border-radius: 6px;
   padding: 15px;
 }
 
 .method-item {
-  background-color: #1e1e1e; /* Slightly darker cards */
-  border: 1px solid #444; /* Subtle border */
+  background: var(--card-gradient);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
@@ -101,11 +120,11 @@
 .method-name {
   font-weight: bold;
   font-size: 1.1em;
-  color: #e0e0e0; /* Light text */
+  color: var(--text-color);
 }
 
 .method-type {
-  background-color: #444; /* Subtle tag background */
+  background-color: var(--border-color); /* Tag background */
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.8em;
@@ -113,7 +132,7 @@
 }
 
 .method-description {
-  color: #aaa; /* Subtle text color */
+  color: var(--subtle-text-color); /* Subtle text */
 }
 
 .method-footer {
@@ -130,22 +149,23 @@
 
 button {
   padding: 8px 12px;
-  background-color: #4caf50; /* Primary button color */
-  color: #ffffff;
+  background: var(--primary-gradient);
+  color: var(--white-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 button:hover {
-  background-color: #45a049; /* Brighter hover state */
+  background: linear-gradient(90deg, #45a049, #388e3c);
 }
 
 button.delete {
-  background-color: #f44336; /* Danger button color */
+  background: var(--danger-gradient);
 }
 
 button.delete:hover {
-  background-color: #da190b; /* Brighter hover state for delete */
+  background: linear-gradient(90deg, #da190b, #c82333);
 }

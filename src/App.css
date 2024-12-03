@@ -3,7 +3,7 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212; /* Dark background */
+  background-color: #377483; /* Dark background */
   color: #e0e0e0; /* Light text for better contrast */
 }
 
@@ -18,8 +18,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1e1e1e; /* Darker navigation bar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: #19383f; /* Darker navigation bar */
+  box-shadow: 0 2px 4px rgba(12, 22, 40, 0.4);
   padding: 15px 20px;
   margin-bottom: 20px;
 }
@@ -44,7 +44,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #1e90ff; /* Brighter hover color */
+  color: #40135f; /* Brighter hover color */
 }
 
 /* Form Styles */

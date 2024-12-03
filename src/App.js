@@ -13,13 +13,13 @@ function App() {
       <Router>
         <div className="app-container">
           <nav className="main-navigation">
-            <div className="logo">Cal-Com</div>
+            <div className="logo">Event Calender</div>
             <ul className="nav-links">
               <li>
                 <Link to="/">Dashboard</Link>
               </li>
               <li>
-                <Link to="/admin">Company's Details</Link>
+                <Link to="/admin">Add Company</Link>
               </li>
               <li>
                 <Link to="/company">Company List</Link>
